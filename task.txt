@@ -1,0 +1,38 @@
+ Use these files, write python logic using Polars Lazy Frames read csv data on lazy frames, do the below aggregations to generate output in  JSON format,
+Using that  generated JSON file, Create React component to show these aggregations results in a table format or some other data display what ever is feasible.  
+Below are the required aggregation calculations that need to perform and provide grading as given
+a. within credit score ranges 
+    -- Differentiate Companies based on Credit Score like
+ if credit score is above 85, it is type A company, 
+if between 50 to 85 type B
+between 35 to 50, type C
+between 0 to 35 type D, 
+less than 0 type E
+b. within credit limit ranges
+ if Credit Limit above 250K  type A 
+if credit limit is 100K to 250K  type B
+if credit limit is 50K to 100K Type C
+if Credit Limit is below 50K type D
+if Credit Limit is not available then Type E
+c. within in turnover ranges
+ if Credit Limit above 100K  type A 
+if credit limit is 0K to 250K  type B
+if credit limit is 50K to 100K Type C
+if Credit Limit is below 50K type D
+if Credit Limit is not available then Type E
+d. Active and Inactive 
+If 
+e. Country wise Companies. 
+f. Country wise Active and Inactive companies. 
+For example if a company has credit_limit 175K give type B rating, if score having 88 give A rating etc.. 
+and the output should be like 
+[
+{
+safeNumber: "CMPXXXXX",
+credit_score_type: A,
+credit_limit_type: B, 
+etc...
+}
+....
+]
+Using this Json, create the UI to show these details in a table.. 
