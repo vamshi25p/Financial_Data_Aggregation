@@ -1,0 +1,44 @@
+[
+    {
+        "country_code": "IT",
+        "companies_count": 7164,
+        "active_companies_count": 6807,
+        "inactive_companies_count": 357
+    },
+    {
+        "country_code": "DE",
+        "companies_count": 7015,
+        "active_companies_count": 6855,
+        "inactive_companies_count": 160
+    },
+    {
+        "country_code": "BE",
+        "companies_count": 5987,
+        "active_companies_count": 5743,
+        "inactive_companies_count": 244
+    },
+    {
+        "country_code": "GB",
+        "companies_count": 105,
+        "active_companies_count": 103,
+        "inactive_companies_count": 2
+    },
+    {
+        "country_code": "IE",
+        "companies_count": 65,
+        "active_companies_count": 65,
+        "inactive_companies_count": 0
+    },
+    {
+        "country_code": "DK",
+        "companies_count": 13,
+        "active_companies_count": 11,
+        "inactive_companies_count": 2
+    },
+    {
+        "country_code": "NL",
+        "companies_count": 9,
+        "active_companies_count": 3,
+        "inactive_companies_count": 6
+    }
+]

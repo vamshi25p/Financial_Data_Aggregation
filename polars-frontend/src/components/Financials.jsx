@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 
-const Financials = ({ dataFile }) => {
+const Financials = () => {
   const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
-  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/${dataFile}.json`);
+        const response = await fetch("/company_aggregations.json");
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch ${dataFile}.json`);
+          throw new Error(`Failed to fetch the json file`);
         }
 
         const jsonData = await response.json();
         setData(jsonData);
-        setTitle(
-          dataFile
-            .replace("_", " ")
-            .replace("K", "K ")
-            .replace(".json", "")
-            .replace("_", " ")
-        );
       } catch (err) {
-        setError(err.message);
+        console.log(err.message);
       }
     };
 
     fetchData();
-  }, [dataFile]);
+  }, []);
 
   return (
     <>
@@ -41,29 +32,25 @@ const Financials = ({ dataFile }) => {
           verticalAlign: "center",
         }}
       >
-        {title}
+        Company Aggregations
       </h1>
-      {error && (
-        <div style={{ color: "red", textAlign: "center" }}>{error}</div>
-      )}
+
       <Table bordered hover variant="light">
         <thead>
           <tr>
-            <th>safeNumber</th>
-            <th>credit_score_type</th>
-            <th>credit_limit_type</th>
-            <th>turnover_type</th>
-            <th>status</th>
+            <th>country_code</th>
+            <th>companies_count</th>
+            <th>active_companies_count</th>
+            <th>inactive_companies_count</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
-              <td>{item.safeNumber}</td>
-              <td>{item.credit_score_type}</td>
-              <td>{item.credit_limit_type}</td>
-              <td>{item.turnover_type}</td>
-              <td>{item.status}</td>
+              <td>{item.country_code}</td>
+              <td>{item.companies_count}</td>
+              <td>{item.active_companies_count}</td>
+              <td>{item.inactive_companies_count}</td>
             </tr>
           ))}
         </tbody>
