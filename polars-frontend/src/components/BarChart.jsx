@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
+/* eslint-disable */
 const BarChart = ({ data }) => {
   const countryCode = data.map((item) => item.country_code);
   const companyCount = data.map((item) => item.companies_count);

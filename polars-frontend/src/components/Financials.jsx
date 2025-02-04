@@ -50,8 +50,8 @@ const Financials = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
+          {data.map((item, index) => (
+            <tr key={item.id || index}>
               <td>{item.country_code}</td>
               <td>{item.companies_count}</td>
               <td>{item.active_companies_count}</td>
