@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
+import BarChart from "./BarChart";
 
 const Financials = () => {
   const [data, setData] = useState([]);
@@ -24,18 +25,22 @@ const Financials = () => {
   }, []);
 
   return (
-    <>
-      <h1
-        style={{
-          color: "#565c5b",
-          textAlign: "center",
-          verticalAlign: "center",
-        }}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <h2
+        style={{ color: "#565c5b", textAlign: "center", marginBottom: "15px" }}
       >
         Company Aggregations
-      </h1>
+      </h2>
 
-      <Table bordered hover variant="light">
+      <Table bordered hover variant="light" style={{ width: "600px" }}>
         <thead>
           <tr>
             <th>country_code</th>
@@ -55,7 +60,15 @@ const Financials = () => {
           ))}
         </tbody>
       </Table>
-    </>
+
+      <h2 style={{ color: "#565c5b", textAlign: "center", marginTop: "20px" }}>
+        Company Aggregations Chart
+      </h2>
+
+      <div style={{ width: "600px", height: "400px" }}>
+        <BarChart data={data} />
+      </div>
+    </div>
   );
 };
 
